@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * _printf - duplicate function of the standard printf function.
  * @format: the input text to be formated and printed to the stdout.
@@ -40,7 +39,8 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				_putchar(*format);
-				count += 2; } }
+				count += 2; }
+			format++; }
 		else
 		{
 			_putchar(*format);
