@@ -32,14 +32,10 @@ int _printf(const char *format, ...)
 			{
 				_putchar('%');
 				count++; }
-			else if (*format == ' ' || *format == '\0')
-			{
-				return (-1); }
+			/**else if (*format == ' ' || *format == '\0')
+				return (-1);*/
 			else
-			{
-				_putchar('%');
-				_putchar(*format);
-				count += 2; }
+				_putchar('%'), _putchar(*format), count += 2;
 			format++; }
 		else
 		{
