@@ -16,8 +16,7 @@ int _printf(const char *format, ...)
 	while (*format)
 	{
 		if (*format == '%')
-		{
-			format++;
+		{ format++;
 			if (*format == 'c')
 			{ char c = va_arg(args, int);
 				count += _putchar(c); }
@@ -27,21 +26,21 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{ int num = va_arg(args, int);
 				count += handle_integer(num); }
+			else if (*format == 'b')
+			{ int num = va_arg(agrs, int);
+				count += convert_binary(num); }
 			else if (*format == '%')
-			{
-				_putchar('%');
+			{ _putchar('%');
 				count++; }
 			else if (*format == ' ' || *format == '\0')
 				exit(-1);
 			else
-			{
-				_putchar('%');
+			{ _putchar('%');
 				_putchar(*format);
 				count += 2; }
 			format++; }
 		else
-		{
-			_putchar(*format);
+		{ _putchar(*format);
 			format++;
 			count++; } }
 	return (count); }
