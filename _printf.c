@@ -21,12 +21,12 @@ int _printf(const char *format, ...)
 			format++;
 			if (*format == 'c')
 			{
-				char c = va_args(args, int);
+				char c = va_arg(args, int);
 
 				count += _putchar(c); }
 			else if (*format == 's')
 			{
-				char *str = va_args(args, char *);
+				char *str = va_arg(args, char *);
 
 				count += handle_string(str); }
 			else if (*format == '%')

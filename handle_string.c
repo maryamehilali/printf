@@ -12,16 +12,15 @@ int handle_string(char *str)
 
 	if (str == NULL)
 	{
-		handle_string("(null");
+		handle_string("(null)");
 		count = 6;
+		return;
 	}
-	else
+	while (*str)
 	{
-		while (str)
-		{
-			_putchar(str[i]);
-			count++;
-		}
+		_putchar(*str);
+		count++;
+		str++;
 	}
 	return (count);
 }
