@@ -21,7 +21,7 @@ int handle_integer(int num)
 		_putchar('-');
 		_putchar('2');
 		handle_integer(147483648);
-		exit(count);
+		return (count);
 	}
 	if (num < 0)
 	{
