@@ -24,15 +24,20 @@ int _printf(const char *format, ...)
 			else if (*format == 's')
 			{ char *str = va_arg(args, char *);
 				count += handle_string(str); }
-			else if (*format == 'd' || 'i')
+			else if (*format == 'd' || *format == 'i')
 			{ int num = va_arg(args, int);
 				count += handle_integer(num); }
 			else if (*format == '%')
-				_putchar('%'), count++;
+			{
+				_putchar('%');
+				count++; }
 			else if (*format == ' ' || *format == '\0')
 				exit(-1);
 			else
-				_putchar('%'), _putchar(*format), count += 2;
+			{
+				_putchar('%');
+				_putchar(*format);
+				count += 2; }
 			format++; }
 		else
 		{
