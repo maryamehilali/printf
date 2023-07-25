@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			{ int num = va_arg(args, int);
 				count += handle_integer(num); }
 			else if (*format == 'b')
-			{ int num = va_arg(agrs, int);
+			{ int num = va_arg(args, int);
 				count += convert_binary(num); }
 			else if (*format == '%')
 			{ _putchar('%');
@@ -43,4 +43,5 @@ int _printf(const char *format, ...)
 		{ _putchar(*format);
 			format++;
 			count++; } }
+	va_end(args);
 	return (count); }
