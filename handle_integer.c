@@ -11,11 +11,10 @@ int handle_integer(int num)
 	int count = 0;
 
 	if (num < 0)
-        {
-                count += 1;
+	{
+		count += 1;
 	}
 	count += digit_count(num);
-	
 	if (num == INT_MIN)
 	{
 		_putchar('-');
@@ -24,9 +23,9 @@ int handle_integer(int num)
 		exit(count);
 	}
 	if (num < 0)
-        {
-                _putchar('-');
-                num = -num;
+	{
+		_putchar('-');
+		num = -num;
 	}
 	if (num >= 10)
 	{
