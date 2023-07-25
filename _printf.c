@@ -19,19 +19,13 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			if (*format == 'c')
-			{
-				char c = va_arg(args, int);
-
-				count += _putchar(c); }
+				char c = va_arg(args, int), count += _putchar(c);
 			else if (*format == 's')
-			{
-				char *str = va_arg(args, char *);
-
-				count += handle_string(str); }
+				char *str = va_arg(args, char *), count += handle_string(str);
+			else if (*format == 'd' || 'i')
+				int num = va_arg(args, int), count += handle_integer(num);
 			else if (*format == '%')
-			{
-				_putchar('%');
-				count++; }
+				_putchar('%'), count++;
 			else if (*format == ' ' || *format == '\0')
 				exit(-1);
 			else
